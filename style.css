@@ -1,9 +1,18 @@
 
   body {
-    display: grid-template,columns;
+    display: grid-template-columns;
     background-position: center;
     background-size: cover;
-    color: red;
+    color: black;
     font-family: helvetica;
     text-align: center;
+}
+.container {
+  display: grid-template-columns;
+  background-position: center;
+  height: 150px;
+  text-align: center;
+  width: 150px;
+
+
 }
