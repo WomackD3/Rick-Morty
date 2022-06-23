@@ -1,0 +1,9 @@
+
+  body {
+    display: grid-template,columns;
+    background-position: center;
+    background-size: cover;
+    color: red;
+    font-family: helvetica;
+    text-align: center;
+}

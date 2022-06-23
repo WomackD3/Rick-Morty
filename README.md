@@ -1,5 +1,5 @@
-# Rick-Morty
+# Rick-Morty-Gallery
 
-My first Repo
+
 
 🎱 🥇
