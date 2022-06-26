@@ -1,14 +1,24 @@
 # Rick-Morty-Gallery
 
-App Title: Rick-Morty-Gallery
-
 App Description: This app will be be using an API to display different characters of the Rick & Morty TV show.
+
 ```js
-API: https://rickandmortyapi.com/api
+const url = `https://rickandmortyapi.com/api`
+const char = `https://rickandmortyapi.com/api/character`
+const episode = `https://rickandmortyapi.com/api/episode`
 
-API Snippet: {characters: 'https://rickandmortyapi.com/api/character', locations: 'https://rickandmortyapi.com/api/location', 
 
-episodes: 'https://rickandmortyapi.com/api/episode'}
+fetch('https://rickandmortyapi.com/api')
+  .then(res => res.json())
+  .then(res => console.log(res))
+
+```
+  
+``` API snippet
+
+{characters: 'https://rickandmortyapi.com/api/character', locations: 'https://rickandmortyapi.com/api/location', episodes: 'https://rickandmortyapi.com/api/episode'}
+
+```
 
 Wireframe: 
 
@@ -34,11 +44,3 @@ Day 5 - Deploying MVP
 Day 6 - Improving MVP
 
 Day 7 - Implementing local storage
-
-
-
-
-
-
-
-🎱 🥇
