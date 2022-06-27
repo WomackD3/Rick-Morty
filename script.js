@@ -16,12 +16,14 @@ fetch(char)
     for (let i = 0; i < 20; i++) {
       let info = `
       <div class="img-div">
-          <h2>${data.results[i].name}</h2>
+          <h3>${data.results[i].name}</h3>
+          <h3>${data.results[i].status}</h3>
         <img class="div-img" src="${data.results[i].image}">
       </div>`
-      console.log(data)
       imgContainer.insertAdjacentHTML('beforeend', info)
+      console.log(data)
     }
+    
     const imgDivs = document.querySelectorAll('.img-div')
     imgDivs.forEach((imgDiv, i) => {
       imgDiv.addEventListener('click', () => xtraInfo(data.results[i]))
@@ -48,9 +50,41 @@ let handleRezise = () => {
     return window.innerWidth
   }
 }
+window.addEventListener("resize", handleRezise)
 
+// Model Content
+function xtraInfo(data) {
+  console.log(data);
+  // Display model
+  modal.style.display = "block";
 
-// window.addEventListener("resize", handleRezise)
+  // Clear previous modal content
+  modal.innerHTML = "";
+
+  // set model content
+  let info = `
+    <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>${data.name}</h2>
+    <img class="div-img" src="${data.image}">
+    <p>${data.origin.name}</p>
+    <p>${data.species}</p>
+    <p>${data.status}</p>
+    </div>
+    `;
+
+  // Inject model content
+  modal.insertAdjacentHTML("beforeend", info);
+
+  // Get the <span> element that closes the modal
+  let span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+}
+
 
 // let i = 0;
 // const time = 2000;
