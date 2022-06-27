@@ -57,9 +57,9 @@ fetch(char)
 let modal = document.getElementById('myModal');
 
 //Closing the modal 
-window.onclick = function (e) {
-  if (e.target == modal) {
-    modal.style.display = 'none'
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
   }
 };
 
@@ -82,7 +82,7 @@ function xtraInfo(data) {
   <p${data.species}</p>
   <p${data.status}</p>
   
-  </div>`
+  </div>`;
   
   //Injecting Modal Content
   modal.insertAdjacentHTML('beforeend', info);
@@ -91,8 +91,9 @@ function xtraInfo(data) {
   //When user clicks <span> (x), closes modal
   span.onclick = function () {
     modal.style.display = "none";
-  }
+  };
 }
+
 
 // -----------------------------
 //       Hamburger Menu
