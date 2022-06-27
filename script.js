@@ -19,14 +19,18 @@ fetch(char)
           <h2>${data.results[i].name}</h2>
         <img class="div-img" src="${data.results[i].image}">
       </div>`
-      const imgDiv = document.querySelector('.img-div')
-      
+      console.log(data)
       imgContainer.insertAdjacentHTML('beforeend', info)
     }
-
+    const imgDivs = document.querySelectorAll('.img-div')
+    imgDivs.forEach((imgDiv, i) => {
+      imgDiv.addEventListener('click', () => xtraInfo(data.results[i]))
+    })
   })
 
-
+function xtraInfo(data) {
+    console.log(data)
+  }
 
 
 let handleRezise = () => {
