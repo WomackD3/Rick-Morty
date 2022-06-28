@@ -45,7 +45,6 @@ Create Animations, which can later result in an interactive game.
 |    Date       | Are           |
 | ------------- |:-------------:| 
 | June 22       | Create a readme and rendering properties from the API
-|
 | June 23       | Structuring approach to create dynamic code   | 
 | June 24       | Styling app  with JS    |
 | June 25       | Styling app  with JS     | 
