@@ -119,10 +119,12 @@ width: 100%;
     grid-template-columns: auto;
   }
 }
+
 .img-div {
   border: 2px solid skyblue;
-  
-  
+}
+.img-div:hover {
+  cursor: pointer;
 }
 
 body {

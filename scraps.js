@@ -26,7 +26,7 @@ function displayData(data) {
     <div class="img-div">
       <img class="div-img" src="${data.results[i].image}">
     </div>`;
-
+    console.log(data.results[i])
     imgContainer.insertAdjacentHTML("beforeend", info);
   }
 

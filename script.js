@@ -2,7 +2,6 @@
 //       Fetching API
 // -----------------------------
 
-
 const url = `https://rickandmortyapi.com/api`
 const char = `https://rickandmortyapi.com/api/character`
 const episode = `https://rickandmortyapi.com/api/episode`
@@ -11,7 +10,6 @@ const menu = document.querySelector(".menu")
 const navMenu = document.querySelector(".nav-menu")
 const divImg = document.querySelectorAll('.div-img')
 const imgContainer = document.querySelector('.img-container')
-
 
 // -----------------------------
 //       Prev/Next Buttons
@@ -31,17 +29,36 @@ fetch(char)
     displayData(data);
   });
 
+  // -----------------------------------
+//       Id & Info for the characters
+// -------------------------------------
+  function addListener() {
+    const charContainer = document.querySelectorAll('.img-div')
+    charContainer.forEach(char => {
+      char.addEventListener("click",(e)=>{
+        fetch(`https://rickandmortyapi.com/api/character/${e.target.dataset.id}`)
+          .then(res=>res.json())
+          .then(data=>console.log(data))
+
+      })
+    })
+  }
+// ------------------------------------
+//       Display Images through array
+// ------------------------------------
+
   function displayData(data) {
     imgContainer.innerHTML = '';
     
     for (let i = 0; i < data.results.length; i++) {
       let info = `
-      <div class='img-div'>
+      <div  class='img-div'>
       <h3>${data.results[i].name}</h3>
-      <img class ='div-img' src='${data.results[i].image}'>
+      <img data-id=${data.results[i].id} class ='div-img' src='${data.results[i].image}'>
       </div>`;
       imgContainer.insertAdjacentHTML('beforeend', info)
     }
+    addListener();
     const imgDivs = document.querySelectorAll('img-div');
     
     imgDivs.forEach((imgDiv, i) => {
