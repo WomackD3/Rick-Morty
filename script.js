@@ -15,7 +15,6 @@ const imgContainer = document.querySelector('.img-container')
 //       Prev/Next Buttons
 // -----------------------------
 
-// 
 const nextButton = document.querySelector('#next')
 const prevButton = document.querySelector('#prev')
 let next = null;
@@ -44,13 +43,14 @@ function addListener() {
   })
 }
 // ------------------------------------
-//       Display Images through array
+//       Display Images through array 
 // ------------------------------------
 
 function displayData(data) {
   imgContainer.innerHTML = '';
 
   for (let i = 0; i < data.results.length; i++) {
+    // Looping through the data.results to provide  name, image, and ID 
     let info = `
       <div class='img-div'>
         <h3>${data.results[i].name}</h3>
@@ -59,6 +59,9 @@ function displayData(data) {
     imgContainer.insertAdjacentHTML('beforeend', info)
   }
   addListener();
+// Calling the add Listener function for the ID and info for Characters
+
+
   // const imgDivs = document.querySelectorAll('.img-div');
 
   // imgDivs.forEach((imgDiv, i) => {
@@ -132,6 +135,11 @@ let handleResize = () => {
 }
 window.addEventListener("resize", handleResize)
 handleResize();
+
+// -----------------------------
+//       Prev/Next Buttons
+// -----------------------------
+
 
 // Next Button
 nextButton.addEventListener("click", () => {

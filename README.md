@@ -21,11 +21,6 @@ fetch('https://rickandmortyapi.com/api')
 
 ```
 
-## Wireframe:
-
-
-
-
 ## Minimum Viable Product : 
 
 Render an API using an UI pattern that can deploy to GitHub having HTML and CSS structured
@@ -54,5 +49,9 @@ Create Animations, which can later result in an interactive game.
 
 
 
+### Rick & Morty Gallery website.
 
+https://womackd3.github.io/Rick-Morty/
+
+https://github.com/WomackD3/Rick-Morty
 

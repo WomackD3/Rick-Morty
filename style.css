@@ -54,24 +54,26 @@ a {
   transition: all 0.3s ease-in-out;
   background-color: skyblue;
 }
-
 @media(max-width: 909px) {
   .menu {
     display: block;
   }
 }
 
+/* Editing the Menu to animate from bars to a "X" */
 .menu.active .bar:nth-child(2) {
-  opacity: 0;
+  opacity: 0; /* opacity at 0 so the middle bar disappear */
 
 }
 
 .menu.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
+  /* Rotates top bar diagonally to the right  */
 }
 
 .menu.active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+ /*Rotates top bar diagonally to the right*/
 }
 
 .nav-menu {
@@ -107,7 +109,7 @@ nav li {
   margin: 0 8px;
   line-height: 80px;
 }
-
+/* Setting Grid to have 4 columns and rows */
 .img-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -115,7 +117,7 @@ nav li {
   width: 100%;
 
 }
-
+/* Adding a breakpoint to adjust to a phone setting */
 @media (max-width: 650px) {
   .img-container {
     grid-template-columns: auto;
@@ -135,6 +137,7 @@ nav li {
 
 body {
   font-family: 'Rubik Moonrocks', cursive;
+  /* Adding a font & animations to the body */
   background: linear-gradient(271deg, #ebf92a, #4df20f, #0ff2e0, #b5c1c0);
   background-size: 800% 800%;
 
@@ -213,15 +216,16 @@ body {
 
 .close:hover,
 .close:focus {
+  /* Adding a pointer to the cursor */
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
 button {
+  
   border: solid black 5px;
   border-radius: 15px;
-  /* background-color: darkgrey; */
   color: black;
   height: 100px;
   width: 100px;
