@@ -134,6 +134,7 @@ nav li {
 }
 
 body {
+  font-family: 'Rubik Moonrocks', cursive;
   background: linear-gradient(271deg, #ebf92a, #4df20f, #0ff2e0, #b5c1c0);
   background-size: 800% 800%;
 
@@ -221,7 +222,7 @@ button {
   border: solid black 5px;
   border-radius: 15px;
   /* background-color: darkgrey; */
-  color: skyblue;
+  color: black;
   height: 100px;
   width: 100px;
   background: linear-gradient(271deg, #ebf92a, #4df20f, #0ff2e0, #b5c1c0);
@@ -231,37 +232,13 @@ button {
   animation: AnimationName 16s ease infinite;
 }
 
-@-webkit-keyframes AnimationName {
-  0% {
-    background-position: 0% 58%
-  }
 
-  50% {
-    background-position: 100% 43%
-  }
-
-  100% {
-    background-position: 0% 58%
-  }
-}
-
-@keyframes AnimationName {
-  0% {
-    background-position: 0% 58%
-  }
-
-  50% {
-    background-position: 100% 43%
-  }
-
-  100% {
-    background-position: 0% 58%
-  }
-}
   
 
 
 .bttn {
   text-align: center;
+  color: black;
+  font: bold;
   
 }
