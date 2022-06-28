@@ -1,7 +1,7 @@
 * {
-padding: 0;
-margin: 0;
-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 header {
@@ -16,6 +16,7 @@ a {
   color: white;
   text-decoration: none;
 }
+
 .navBar {
   min-height: 70px;
   display: flex;
@@ -32,10 +33,10 @@ a {
 }
 
 .nav-link {
-  transition: 0.7s ease;  
+  transition: 0.7s ease;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: skyblue;
 }
 
@@ -55,15 +56,16 @@ a {
 }
 
 @media(max-width: 909px) {
-  .menu{
+  .menu {
     display: block;
   }
 }
 
 .menu.active .bar:nth-child(2) {
   opacity: 0;
-  
+
 }
+
 .menu.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -88,16 +90,16 @@ a {
   margin: 16px 0;
 }
 
-.nav-menu.active{
+.nav-menu.active {
   left: 0;
 }
 
-label.logo{
- font-size: 35px;
- font-weight: bold;
- color: skyblue;
- padding: 0 100px;
- line-height: 80px;
+label.logo {
+  font-size: 35px;
+  font-weight: bold;
+  color: skyblue;
+  padding: 0 100px;
+  line-height: 80px;
 }
 
 nav li {
@@ -107,22 +109,26 @@ nav li {
 }
 
 .img-container {
-display: grid;
-grid-template-columns: auto auto auto auto;
-grid-template-rows: auto auto auto auto ;
-width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  width: 100%;
 
 }
 
 @media (max-width: 650px) {
-  .img-container{
+  .img-container {
     grid-template-columns: auto;
   }
 }
 
 .img-div {
   border: 2px solid skyblue;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
+
 .img-div:hover {
   cursor: pointer;
 }
@@ -136,37 +142,64 @@ body {
 }
 
 @-webkit-keyframes AnimationName {
-  0%{background-position:0% 58%}
-  50%{background-position:100% 43%}
-  100%{background-position:0% 58%}
+  0% {
+    background-position: 0% 58%
+  }
+
+  50% {
+    background-position: 100% 43%
+  }
+
+  100% {
+    background-position: 0% 58%
+  }
 }
+
 @keyframes AnimationName {
-  0%{background-position:0% 58%}
-  50%{background-position:100% 43%}
-  100%{background-position:0% 58%}
+  0% {
+    background-position: 0% 58%
+  }
+
+  50% {
+    background-position: 100% 43%
+  }
+
+  100% {
+    background-position: 0% 58%
+  }
 }
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
+  /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -184,14 +217,51 @@ body {
   cursor: pointer;
 }
 
-.button {
-  border: 50px;
-  margin: 0;
-  float: right;
-  background-color: darkgrey;
+button {
+  border: solid black 5px;
+  border-radius: 15px;
+  /* background-color: darkgrey; */
   color: skyblue;
-  height: 10px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(271deg, #ebf92a, #4df20f, #0ff2e0, #b5c1c0);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 16s ease infinite;
+  animation: AnimationName 16s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 58%
+  }
+
+  50% {
+    background-position: 100% 43%
+  }
+
+  100% {
+    background-position: 0% 58%
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 58%
+  }
+
+  50% {
+    background-position: 100% 43%
+  }
+
+  100% {
+    background-position: 0% 58%
+  }
+}
   
 
+
+.bttn {
+  text-align: center;
+  
 }

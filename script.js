@@ -29,44 +29,45 @@ fetch(char)
     displayData(data);
   });
 
-  // -----------------------------------
+// -----------------------------------
 //       Id & Info for the characters
 // -------------------------------------
-  function addListener() {
-    const charContainer = document.querySelectorAll('.img-div')
-    charContainer.forEach(char => {
-      char.addEventListener("click",(e)=>{
-        fetch(`https://rickandmortyapi.com/api/character/${e.target.dataset.id}`)
-          .then(res=>res.json())
-          .then(data=>console.log(data))
+function addListener() {
+  const charContainer = document.querySelectorAll('.img-div')
+  charContainer.forEach(char => {
+    char.addEventListener("click", (e) => {
+      fetch(`https://rickandmortyapi.com/api/character/${e.target.dataset.id}`)
+        .then(res => res.json())
+        .then(data => xtraInfo(data))
 
-      })
     })
-  }
+  })
+}
 // ------------------------------------
 //       Display Images through array
 // ------------------------------------
 
-  function displayData(data) {
-    imgContainer.innerHTML = '';
-    
-    for (let i = 0; i < data.results.length; i++) {
-      let info = `
-      <div  class='img-div'>
-      <h3>${data.results[i].name}</h3>
-      <img data-id=${data.results[i].id} class ='div-img' src='${data.results[i].image}'>
+function displayData(data) {
+  imgContainer.innerHTML = '';
+
+  for (let i = 0; i < data.results.length; i++) {
+    let info = `
+      <div class='img-div'>
+        <h3>${data.results[i].name}</h3>
+        <img class ='div-img' data-id=${data.results[i].id} src='${data.results[i].image}'>
       </div>`;
-      imgContainer.insertAdjacentHTML('beforeend', info)
-    }
-    addListener();
-    const imgDivs = document.querySelectorAll('img-div');
-    
-    imgDivs.forEach((imgDiv, i) => {
-      imgDiv.addEventListener('click', () => xtraInfo(data.results[i]));
-    });
+    imgContainer.insertAdjacentHTML('beforeend', info)
   }
-  
-  // -----------------------------
+  addListener();
+  // const imgDivs = document.querySelectorAll('.img-div');
+
+  // imgDivs.forEach((imgDiv, i) => {
+  //   console.log(imgDiv)
+  //   imgDiv.addEventListener('click', () => xtraInfo(data.results[i]));
+  // });
+}
+
+// -----------------------------
 //            Modal
 // -----------------------------
 
@@ -82,25 +83,23 @@ window.onclick = function (event) {
 
 //Modal Content
 function xtraInfo(data) {
-  console.log(data);
   //Display modal
   modal.style.display = 'block';
   //Clear previous modal
   modal.innerHTML = '';
-  
+
   //Setting Modal's Content
   //Grabbing Name, Image, Origin Location, Species and Status
   let info = `
   <div class='modal-content'>
-  <span class='close'>&times;</span>
-  <h2>${data.name}<h2> 
-  <img class='div-img' src='${data.image}'>
-  <p${data.origin.name}</p>
-  <p${data.species}</p>
-  <p${data.status}</p>
-  
+    <span class='close'>&times;</span>
+    <h2>${data.name}<h2> 
+    <img class='div-img' src='${data.image}'/>
+    <p>${data.origin.name}</p>
+    <p>${data.species}</p>
+    <p>${data.status}</p>
   </div>`;
-  
+
   //Injecting Modal Content
   modal.insertAdjacentHTML('beforeend', info);
   // Grabbing the <span> to close modal
@@ -117,12 +116,12 @@ function xtraInfo(data) {
 // -----------------------------
 
 let handleResize = () => {
-  
+
   menu.addEventListener("click", () => {
     menu.classList.toggle("active");
     navMenu.classList.toggle("active");
   })
-  
+
   document.querySelectorAll(".nav-link").forEach(e => e.addEventListener("click", () => {
     menu.classList.remove("active");
     navMenu.classList.remove("active");
@@ -136,22 +135,22 @@ handleResize();
 
 // Next Button
 nextButton.addEventListener("click", () => {
-fetch(next)
-  .then((res) => res.json())
-  .then((data) => {
-    next = data.info.next;
-    prev = data.info.prev;
-    displayData(data);
-  });
+  fetch(next)
+    .then((res) => res.json())
+    .then((data) => {
+      next = data.info.next;
+      prev = data.info.prev;
+      displayData(data);
+    });
 });
 
 // Prev Button
 prevButton.addEventListener("click", () => {
-fetch(prev)
-  .then((res) => res.json())
-  .then((data) => {
-    next = data.info.next;
-    prev = data.info.prev;
-    displayData(data);
-  });
+  fetch(prev)
+    .then((res) => res.json())
+    .then((data) => {
+      next = data.info.next;
+      prev = data.info.prev;
+      displayData(data);
+    });
 });
